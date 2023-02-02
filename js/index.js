@@ -8,7 +8,7 @@
 
     // <!-- Below Function is to get the movies from the database on the HTML page -->
    const movies = await getMovies();
-    console.log(movies);
+
     html=``;
 for (let i=0; i<movies.length; i++){
     html+=`<div class="movie">
@@ -17,6 +17,8 @@ for (let i=0; i<movies.length; i++){
     <div class="movie-year">${movies[i].year}</div>
     <div class="movie-runtime">${movies[i].runtime}</div>
     <div class="movie-actors">${movies[i].actors}</div>
+    <div class="movie-genre">${movies[i].genre}</div>
+    <div class="movie-director">${movies[i].director}</div>
     </div>`;
 }
 $('#movies').html(html)
@@ -38,19 +40,22 @@ $('#movies').html(html)
         $('#movies').html('<div class="movie">');
     });
 
-    $('#delete-movie').click(function() {
-        let movie = {
-            title: $('#title').val(),
-            rating: $('#rating').val(),
-            year: $('#year').val(),
-            director: $('#director').val(),
-            runtime: $('#runtime').val(),
-            genre: $('#genre').val(),
-            actors: $('#actors').val(),
-        };
+    //write a function that deletes a movie from the database when the delete button is clicked using the title as the identifier
+
+
+
+    $('#delete-movie-btn').click(function() {
+        let movie = {}
+        movie.id = $('#delete-movie').val();
+
         deleteMovie(movie);
         $('#movies').html('<div class="movie">');
     });
+
+
+
+
+
 
 })();
 
