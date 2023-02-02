@@ -1,0 +1,12 @@
+/* This is the CSS file for the movies app */
+
+
+body {
+    margin: 1em;
+}
+#add{
+    margin: 1em;
+}
+#delete{
+    margin: 1em;
+}
