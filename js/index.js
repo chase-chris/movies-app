@@ -40,17 +40,22 @@ $('#movies').html(html)
         $('#movies').html('<div class="movie">');
     });
 
-    //write a function that deletes a movie from the database when the delete button is clicked using the title as the identifier
-
+    //todo write a function that deletes a movie from the database when the delete button is clicked using the title as the identifier
 
 
     $('#delete-movie-btn').click(function() {
-        let movie = {}
-        movie.id = $('#delete-movie').val();
+        for (let i=0; i<movies.length; i++){
+            if (movies[i].title === $('#delete-movie').val()){
+                console.log(movies[i].id)
+                    let movie ={}
+                    movie.id = movies[i].id
 
-        deleteMovie(movie);
-        $('#movies').html('<div class="movie">');
+                deleteMovie(movie);
+                $('#movies').html('<div class="movie">');
+            }
+        }
     });
+
 
 
 

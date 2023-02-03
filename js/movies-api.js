@@ -58,8 +58,9 @@ const deleteMovie = async (movie) => {
             }
         };
         let response = await db.fetch(url, options);
+        console.log("hey this works")
         return await response.json();
-        // console.log("hey this works")
+
     } catch (e) {
         console.error(e);
     }
