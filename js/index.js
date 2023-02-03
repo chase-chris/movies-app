@@ -9,9 +9,9 @@
     // <!-- Below Function is to get the movies from the database on the HTML page -->
    const movies = await getMovies();
 
-    html=``;
+    newhtml=``;
     for (let i=0; i<movies.length; i++){
-        html+=`<div class="movie">
+        newhtml+=`<div class="movie">
 <div class="wrapper">
     <div class="main_card">
         <div class="card_left">
@@ -32,15 +32,14 @@
        </button>
            <!-- GET-->
        <button>
-       <i class="fas fa-download"></i> DOWNLOAD
+        DOWNLOAD
        </button>
            <!--USERS RATINGS-->
        <button>
-       <i class="fas fa-thumbs-up"></i> ${movies[i].rating}
+       ${movies[i].rating}
        </button>
            <!--BOOKMARK-->
        <button>
-       <i class="fas fa-star"></i>
        </button>
        </div>
        </div>
@@ -51,7 +50,7 @@
        </div>
        <div class="play_btn">
        <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
-       <i class="fas fa-play-circle"></i>
+       
        </a>
        </div>
        </div>
@@ -60,9 +59,7 @@
        </div>`
     }
 
-$('#movies').html(html)
-
-    console.log(movies);
+$('#movies').html(newhtml)
 
 
     $('#add-movie').click(function() {
@@ -90,7 +87,7 @@ $('#movies').html(html)
                     movie.id = movies[i].id
 
                 deleteMovie(movie);
-                $('#movies').html('<div class="movie">');
+                // $('#movies').html('<div class="movie">');
             }
         }
     });
@@ -99,17 +96,15 @@ $('#movies').html(html)
 
     //todo write a search function that searches my title and returns that movie
     $('.search-movie-btn').click(function() {
+        console.log("button works")
         for (let i=0; i<movies.length; i++){
             if (movies[i].title === $('.search-movie').val()){
                 console.log(movies[i].id)
                 let movie ={}
                 movie.id = movies[i].id
                 getMovie(movie);
-
-                console.log(hello)
-                html2=``;
-                for (let i=0; i<movies.length; i++){
-                    html2+=`<div class="movie2">
+                searchhtml=``;
+                    searchhtml+=`<div class="movie">
 <div class="wrapper">
     <div class="main_card">
         <div class="card_left">
@@ -130,15 +125,14 @@ $('#movies').html(html)
        </button>
            <!-- GET-->
        <button>
-       <i class="fas fa-download"></i> DOWNLOAD
+        DOWNLOAD
        </button>
            <!--USERS RATINGS-->
        <button>
-       <i class="fas fa-thumbs-up"></i> ${movies[i].rating}
+       ${movies[i].rating}
        </button>
            <!--BOOKMARK-->
        <button>
-       <i class="fas fa-star"></i>
        </button>
        </div>
        </div>
@@ -149,21 +143,16 @@ $('#movies').html(html)
        </div>
        <div class="play_btn">
        <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
-       <i class="fas fa-play-circle"></i>
+       
        </a>
        </div>
        </div>
        </div>
        </div>
        </div>`
-                }
-
-                $('#searched-movie').html(html2)
-
-                $('#searched-movie').html('<div class="movie2">');
-
-                console.log(1)
             }
+            console.log(searchhtml)
+            $('#searched-movie').html(searchhtml)
         }
     });
 
