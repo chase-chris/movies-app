@@ -6,9 +6,34 @@
     <link rel="stylesheet" href="css/movies-app.css">
 </head>
 <body>
-
+<!--Navbar Start-->
+<div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="movie-search"></i></button>
+            </form>
+    </div>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+<!--Navbar End-->
+<!--Movie Carousel Start-->
 <div id="movies"></div>
-
+<!--Movie Carousel End-->
+<!--Movie Add Form Start-->
 <div id="add">
     <input id="title" type="text" placeholder="Title">
     <input id="rating" type="text" placeholder="Rating">
@@ -19,12 +44,13 @@
     <input id="director" type="text" placeholder="director">
     <button id="add-movie">Add Movie</button>
 </div>
-
+<!--Movie Add Form End-->
+<!--Movie Delete Form Start-->
 <div id="delete">
     <input id="delete-movie" type="text" placeholder="Movie Name">
     <button id="delete-movie-btn">Delete Movie</button>
 </div>
-
+<!--Movie Delete Form End-->
 
 
 <!-- The core Firebase JS SDK and Databse library -->
