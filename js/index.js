@@ -88,27 +88,28 @@ $('#movies').html(newhtml)
 
     // write a function that updates a movie by searhing the title
 
-    // $('#update-input-btn').click(function() {
-    //     for (let i=0; i<movies.length; i++){
-    //         if (movies[i].title === $('#update-input').val()){
-    //             console.log(movies[i].id)
-    //             let movie = {
-    //                 title: $('#title1').val(),
-    //                 rating: $('#rating1').val(),
-    //                 year: $('#year1').val(),
-    //                 director: $('#director1').val(),
-    //                 runtime: $('#runtime1').val(),
-    //                 genre: $('#genre1').val(),
-    //                 actors: $('#actors1').val(),
-    //             };
-    //
-    //             updateMovie(movie);
-    //
-    //         }
-    //     }
-    // });
-    //
-    //
+    $('#update-input-btn').click(function() {
+        for (let i=0; i<movies.length; i++){
+            if (movies[i].title === $('#update-input').val()){
+                console.log(movies[i].id)
+                let movie = {
+                    title: $('#title1').val(),
+                    rating: $('#rating1').val(),
+                    id: movies[i].id,
+                    year: $('#year1').val(),
+                    director: $('#director1').val(),
+                    runtime: $('#runtime1').val(),
+                    genre: $('#genre1').val(),
+                    actors: $('#actors1').val(),
+                };
+                console.log(movie)
+                updateMovie(movie);
+
+            }
+        }
+    });
+
+
 
 
 
