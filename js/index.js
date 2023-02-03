@@ -12,52 +12,52 @@
     html=``;
     for (let i=0; i<movies.length; i++){
         html+=`<div class="movie">
- <div class="wrapper">
-     <div class="main_card">
-         <div class="card_left">
-             <div class="card_datails">
-                 <h1>${movies[i].title}</h1>
-                 <div class="card_cat">
-                     <p class="year">Year: ${movies[i].year}</p>
-                     <p class="genre">Genre: ${movies[i].genre}</p>
-                     <p class="time">Minutes: ${movies[i].runtime}</p>
-                     <p class="director">Director: ${movies[i].director}</p>
-                     <p class="actors">Actors: ${movies[i].actors}</p>
-                 </div>
-                   <img src="${movies[i].poster}" alt="poster" class="poster">
-        <div class="social-btn">
-        <!-- WATCH TRAILER-->
-        <button>
-            <a href="${movies[i].trailer}" target="_blank">Watch Trailer</a>
-        </button>
-            <!-- GET-->
-        <button>
-        <i class="fas fa-download"></i> DOWNLOAD
-        </button>
-            <!--USERS RATINGS-->
-        <button>
-        <i class="fas fa-thumbs-up"></i> ${movies[i].rating}
-        </button>
-            <!--BOOKMARK-->
-        <button>
-        <i class="fas fa-star"></i>
-        </button>
-        </div>
-        </div>
-        </div>
-        <div class="card_right">
-        <div class="img_container">
-        <img src="${movies[i].poster}" alt="movie">
-        </div>
-        <div class="play_btn">
-        <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
-        <i class="fas fa-play-circle"></i>
-        </a>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>`
+<div class="wrapper">
+    <div class="main_card">
+        <div class="card_left">
+            <div class="card_datails">
+                <h1>${movies[i].title}</h1>
+                <div class="card_cat">
+                    <p class="year">Year: ${movies[i].year}</p>
+                    <p class="genre">Genre: ${movies[i].genre}</p>
+                    <p class="time">Minutes: ${movies[i].runtime}</p>
+                    <p class="director">Director: ${movies[i].director}</p>
+                    <p class="actors">Actors: ${movies[i].actors}</p>
+                </div>
+                  <img src="${movies[i].poster}" alt="poster" class="poster">
+       <div class="social-btn">
+       <!-- WATCH TRAILER-->
+       <button>
+           <a href="${movies[i].trailer}" target="_blank">Watch Trailer</a>
+       </button>
+           <!-- GET-->
+       <button>
+       <i class="fas fa-download"></i> DOWNLOAD
+       </button>
+           <!--USERS RATINGS-->
+       <button>
+       <i class="fas fa-thumbs-up"></i> ${movies[i].rating}
+       </button>
+           <!--BOOKMARK-->
+       <button>
+       <i class="fas fa-star"></i>
+       </button>
+       </div>
+       </div>
+       </div>
+       <div class="card_right">
+       <div class="img_container">
+       <img src="${movies[i].poster}" alt="movie">
+       </div>
+       <div class="play_btn">
+       <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
+       <i class="fas fa-play-circle"></i>
+       </a>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>`
     }
 
 $('#movies').html(html)
@@ -95,7 +95,77 @@ $('#movies').html(html)
         }
     });
 
+// search movies function
 
+    //todo write a search function that searches my title and returns that movie
+    $('.search-movie-btn').click(function() {
+        for (let i=0; i<movies.length; i++){
+            if (movies[i].title === $('.search-movie').val()){
+                console.log(movies[i].id)
+                let movie ={}
+                movie.id = movies[i].id
+                getMovie(movie);
+
+                console.log(hello)
+                html2=``;
+                for (let i=0; i<movies.length; i++){
+                    html2+=`<div class="movie2">
+<div class="wrapper">
+    <div class="main_card">
+        <div class="card_left">
+            <div class="card_datails">
+                <h1>${movies[i].title}</h1>
+                <div class="card_cat">
+                    <p class="year">Year: ${movies[i].year}</p>
+                    <p class="genre">Genre: ${movies[i].genre}</p>
+                    <p class="time">Minutes: ${movies[i].runtime}</p>
+                    <p class="director">Director: ${movies[i].director}</p>
+                    <p class="actors">Actors: ${movies[i].actors}</p>
+                </div>
+                  <img src="${movies[i].poster}" alt="poster" class="poster">
+       <div class="social-btn">
+       <!-- WATCH TRAILER-->
+       <button>
+           <a href="${movies[i].trailer}" target="_blank">Watch Trailer</a>
+       </button>
+           <!-- GET-->
+       <button>
+       <i class="fas fa-download"></i> DOWNLOAD
+       </button>
+           <!--USERS RATINGS-->
+       <button>
+       <i class="fas fa-thumbs-up"></i> ${movies[i].rating}
+       </button>
+           <!--BOOKMARK-->
+       <button>
+       <i class="fas fa-star"></i>
+       </button>
+       </div>
+       </div>
+       </div>
+       <div class="card_right">
+       <div class="img_container">
+       <img src="${movies[i].poster}" alt="movie">
+       </div>
+       <div class="play_btn">
+       <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
+       <i class="fas fa-play-circle"></i>
+       </a>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>`
+                }
+
+                $('#searched-movie').html(html2)
+
+                $('#searched-movie').html('<div class="movie2">');
+
+                console.log(1)
+            }
+        }
+    });
 
 
 
