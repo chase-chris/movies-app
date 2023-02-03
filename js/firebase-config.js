@@ -24,7 +24,7 @@ class FirebaseDatabase {
         if (collections.length === 0) {
             // create an array of example movies
             const movies = [
-                {   
+                {
                     title: 'The Shawshank Redemption',
                     year: 1994,
                     director: 'Frank Darabont',
@@ -32,6 +32,9 @@ class FirebaseDatabase {
                     runtime: 142,
                     genre: 'Drama',
                     actors: 'Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler',
+                    info: 'https://www.imdb.com/title/tt0111161/?ref_=nv_sr_srsg_0',
+                    poster: '/images/shawshank.png',
+                    trailer: 'https://www.youtube.com/embed/6hB3S9bIaco',
                 },
                 {
                     title: 'The Godfather',
@@ -41,6 +44,9 @@ class FirebaseDatabase {
                     runtime: 175,
                     genre: 'Crime, Drama',
                     actors: 'Marlon Brando, Al Pacino, James Caan, Diane Keaton',
+                    info: 'https://www.imdb.com/title/tt0068646/?ref_=nv_sr_srsg_0',
+                    poster: 'https://m.media-amazon.com/images/M/MV5BMTIwMzM5MjQxNF5BMl5BanBnXkFtZTcwNjQ5NjQ5Mw@@._V1_SX300.jpg',
+                    trailer: 'https://www.youtube.com/embed/sY1S34973zA',
                 },
                 {
                     title: 'The Godfather: Part II',
@@ -50,6 +56,9 @@ class FirebaseDatabase {
                     runtime: 202,
                     genre: 'Crime, Drama',
                     actors: 'Al Pacino, Robert De Niro, Robert Duvall, Diane Keaton',
+                    info: 'https://www.imdb.com/title/tt0071562/?ref_=nv_sr_srsg_0',
+                    poster: 'https://www.imdb.com/title/tt0071562/mediaviewer/rm4159262464/?ref_=tt_ov_i',
+                    trailer: 'https://www.youtube.com/watch?v=qJr4QZxYjYQ',
                 }
             ];
             // add the example movies to the collection
