@@ -9,13 +9,11 @@
     // <!-- Below Function is to get the movies from the database on the HTML page -->
    const movies = await getMovies();
 
+
     newhtml=``;
     for (let i=0; i<movies.length; i++){
-        newhtml+=`<div class="movie">
-<div class="wrapper">
-    <div class="main_card">
-        <div class="card_left">
-            <div class="card_datails">
+       newhtml+=`<div class="movie">
+
                 <h1>${movies[i].title}</h1>
                 <div class="card_cat">
                     <p class="year">Year: ${movies[i].year}</p>
@@ -24,38 +22,7 @@
                     <p class="director">Director: ${movies[i].director}</p>
                     <p class="actors">Actors: ${movies[i].actors}</p>
                 </div>
-                  <img src="${movies[i].poster}" alt="poster" class="poster">
-       <div class="social-btn">
-       <!-- WATCH TRAILER-->
-       <button>
-           <a href="${movies[i].trailer}" target="_blank">Watch Trailer</a>
-       </button>
-           <!-- GET-->
-       <button>
-        DOWNLOAD
-       </button>
-           <!--USERS RATINGS-->
-       <button>
-       ${movies[i].rating}
-       </button>
-           <!--BOOKMARK-->
-       <button>
-       </button>
-       </div>
-       </div>
-       </div>
-       <div class="card_right">
-       <div class="img_container">
-       <img src="${movies[i].poster}" alt="movie">
-       </div>
-       <div class="play_btn">
-       <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
-       
-       </a>
-       </div>
-       </div>
-       </div>
-       </div>
+                  
        </div>`
     }
 
@@ -96,67 +63,52 @@ $('#movies').html(newhtml)
 
     //todo write a search function that searches my title and returns that movie
     $('.search-movie-btn').click(function() {
-        console.log("button works")
-        for (let i=0; i<movies.length; i++){
-            if (movies[i].title === $('.search-movie').val()){
-                console.log(movies[i].id)
-                let movie ={}
-                movie.id = movies[i].id
-                getMovie(movie);
-                searchhtml=``;
-                    searchhtml+=`<div class="movie">
-<div class="wrapper">
-    <div class="main_card">
-        <div class="card_left">
-            <div class="card_datails">
-                <h1>${movies[i].title}</h1>
-                <div class="card_cat">
-                    <p class="year">Year: ${movies[i].year}</p>
-                    <p class="genre">Genre: ${movies[i].genre}</p>
-                    <p class="time">Minutes: ${movies[i].runtime}</p>
-                    <p class="director">Director: ${movies[i].director}</p>
-                    <p class="actors">Actors: ${movies[i].actors}</p>
-                </div>
-                  <img src="${movies[i].poster}" alt="poster" class="poster">
-       <div class="social-btn">
-       <!-- WATCH TRAILER-->
-       <button>
-           <a href="${movies[i].trailer}" target="_blank">Watch Trailer</a>
-       </button>
-           <!-- GET-->
-       <button>
-        DOWNLOAD
-       </button>
-           <!--USERS RATINGS-->
-       <button>
-       ${movies[i].rating}
-       </button>
-           <!--BOOKMARK-->
-       <button>
-       </button>
-       </div>
-       </div>
-       </div>
-       <div class="card_right">
-       <div class="img_container">
-       <img src="${movies[i].poster}" alt="movie">
-       </div>
-       <div class="play_btn">
-       <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
-       
-       </a>
-       </div>
-       </div>
-       </div>
-       </div>
-       </div>`
+
+            for (let i = 0; i < movies.length; i++) {
+                if (movies[i].title === $('.search-movie').val()) {
+
+                    let movie = {}
+                    movie.id = movies[i].id
+                    getMovie(movie);
+                    searchhtml = ``;
+                    searchhtml += `<div class="movie">
+                                <h1>${movies[i].title}</h1>
+                                <div class="card_cat">
+                                    <p class="year">Year: ${movies[i].year}</p>
+                                    <p class="genre">Genre: ${movies[i].genre}</p>
+                                    <p class="time">Minutes: ${movies[i].runtime}</p>
+                                    <p class="director">Director: ${movies[i].director}</p>
+                                    <p class="actors">Actors: ${movies[i].actors}</p>
+                                </div>
+                                </div>`
+                }
             }
-            console.log(searchhtml)
-            $('#searched-movie').html(searchhtml)
-        }
+        $('#searched-movie').html(searchhtml)
     });
 
+    // write a function that updates a movie by searhing the title
 
+    // $('#update-input-btn').click(function() {
+    //     for (let i=0; i<movies.length; i++){
+    //         if (movies[i].title === $('#update-input').val()){
+    //             console.log(movies[i].id)
+    //             let movie = {
+    //                 title: $('#title1').val(),
+    //                 rating: $('#rating1').val(),
+    //                 year: $('#year1').val(),
+    //                 director: $('#director1').val(),
+    //                 runtime: $('#runtime1').val(),
+    //                 genre: $('#genre1').val(),
+    //                 actors: $('#actors1').val(),
+    //             };
+    //
+    //             updateMovie(movie);
+    //
+    //         }
+    //     }
+    // });
+    //
+    //
 
 
 
