@@ -22,14 +22,17 @@
         </div>
         <div class="search-container">
             <form class="search-form">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="movie-search"></i></button>
+                <input type="text" placeholder="Search.." name="search" class="search-movie">
+                <button type="submit"><i class="search-movie-btn"></i></button>
             </form>
     </div>
     <a href="#about">About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
+</div>
 <!--Navbar End-->
+<!--search movie car-->
+<div id="searched-movie"></div>
 <!--Movie Carousel Start-->
 <div id="movies"></div>
 <!--Movie Carousel End-->
@@ -57,6 +60,10 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 
+    <!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
 <!-- A local JS file to store the firebase API Key. WARNING: Do not commit this file -->
 <script src="js/keys.js"></script>
 
@@ -70,8 +77,6 @@
     and INTERACT with the DOM -->
 <script src="js/index.js"></script>
 
-<!-- Jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 </body>
 </html>
