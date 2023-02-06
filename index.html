@@ -6,17 +6,25 @@
     <link rel="stylesheet" href="css/movies-app.css">
 </head>
 <body>
+
 <!--Navbar Start-->
-<div class="topnav" id="myTopnav navbar">
-    <a href="#home" class="active">Home</a>
+<div class="topnav" id="navbar">
+    <a id="homeNav" href="#home">Home</a>
     <a id="addNav" href="#add">ADD</a>
     <a id="deleteNav" href="#delete">DELETE</a>
     <a id="updateNav" href="#update">UPDATE</a>
+    <a id="searchNav" href="#search">SEARCH</a>
     <div class="overlay"></div>
 </div>
 
 <!--Navbar End-->
 <!--Hidden Classes Update/Delete/Add-->
+<!--Movie Search Form Start-->
+<div id="search" class="hide">
+    <input id="search-movie" type="text" placeholder="Movie Name">
+    <button id="search-movie-btn">Search Movie</button>
+</div>
+<!--Movie Search Form End-->
 
 <!--Movie Add Form Start-->
 <div id="add" class="hide">
@@ -25,8 +33,9 @@
     <input id="actors" type="text" placeholder="Actors">
     <input id="genre" type="text" placeholder="Genre">
     <input id="runtime" type="text" placeholder="Runtime">
-    <input id="year" type="text" placeholder="year">
-    <input id="director" type="text" placeholder="director">
+    <input id="year" type="text" placeholder="Year">
+    <input id="director" type="text" placeholder="Director">
+    <input id="trailer" type="text" placeholder="Trailer Link">
     <button id="add-movie">Add Movie</button>
 </div>
 <!--Movie Add Form End-->
@@ -49,6 +58,7 @@
         <input id="runtime1" type="text" placeholder="Runtime">
         <input id="year1" type="text" placeholder="year">
         <input id="director1" type="text" placeholder="director">
+        <input id="trailer" type="text" placeholder="Trailer Link">
     </div>
 </div>
 <!--Movie Update Form End -->
