@@ -7,38 +7,19 @@
 </head>
 <body>
 <!--Navbar Start-->
-<div class="topnav" id="myTopnav">
+<div class="topnav" id="myTopnav navbar">
     <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <div class="dropdown">
-        <button class="dropbtn">Dropdown
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="#">Genre</a>
-            <a href="#">Year</a>
-            <a href="#">Title</a>
-        </div>
-<!--        <div class="search-container">-->
-<!--            <form class="search-form">-->
-<!--                <input type="text" placeholder="Search.." name="search" class="search-movie">-->
-<!--                <button type="submit" class="search-movie-btn">button</button>-->
-<!--            </form>-->
-<!--    </div>-->
-    <a href="#about">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    <a id="addNav" href="#add">ADD</a>
+    <a id="deleteNav" href="#delete">DELETE</a>
+    <a id="updateNav" href="#update">UPDATE</a>
+    <div class="overlay"></div>
 </div>
-</div>
-<!--Navbar End-->
-<!--search movie -->
-<div id="searched-movie"></div>
-<!--Movie Carousel Start-->
 
-<div id="movies"></div>
-<!--Movie Carousel End-->
+<!--Navbar End-->
+<!--Hidden Classes Update/Delete/Add-->
+
 <!--Movie Add Form Start-->
-<div id="add">
+<div id="add" class="hide">
     <input id="title" type="text" placeholder="Title">
     <input id="rating" type="text" placeholder="Rating">
     <input id="actors" type="text" placeholder="Actors">
@@ -50,27 +31,32 @@
 </div>
 <!--Movie Add Form End-->
 <!--Movie Delete Form Start-->
-<div id="delete">
+<div id="delete" class="hide">
     <input id="delete-movie" type="text" placeholder="Movie Name">
     <button id="delete-movie-btn">Delete Movie</button>
 </div>
-<!--Movie Delete Form End-->
+<!--Movie Delete Form end -->
+<!--Movie Update Form Start-->
 
-<!--update sectio-->
-<div id="updatefield">
-    <input id="title1" type="text" placeholder="Title">
-    <input id="rating1" type="text" placeholder="Rating">
-    <input id="actors1" type="text" placeholder="Actors">
-    <input id="genre1" type="text" placeholder="Genre">
-    <input id="runtime1" type="text" placeholder="Runtime">
-    <input id="year1" type="text" placeholder="year">
-    <input id="director1" type="text" placeholder="director">
-</div>
-<div id="update">
+<div id="update" class="hide">
     <input id="update-input" type="text" placeholder="Movie Name">
     <button id="update-input-btn">update Movie</button>
+    <div id="updateField" class="hide">
+        <input id="title1" type="text" placeholder="Title">
+        <input id="rating1" type="text" placeholder="Rating">
+        <input id="actors1" type="text" placeholder="Actors">
+        <input id="genre1" type="text" placeholder="Genre">
+        <input id="runtime1" type="text" placeholder="Runtime">
+        <input id="year1" type="text" placeholder="year">
+        <input id="director1" type="text" placeholder="director">
+    </div>
 </div>
+<!--Movie Update Form End -->
+<!--Movie Carousel Start-->
 
+<div id="movies"></div>
+
+<!--Movie Carousel End-->
 
 <!-- The core Firebase JS SDK and Databse library -->
 <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>

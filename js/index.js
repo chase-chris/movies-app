@@ -158,8 +158,8 @@
 
 
     async function updateMyMovies() {
-        const movies = await getMovies();
         $('#update-input-btn').click(async function () {
+            const movies = await getMovies();
             // console.log("update btn clicked");
             for (let i = 0; i < movies.length; i++) {
                 // console.log(movies[i])
@@ -186,8 +186,49 @@
     await deleteMyMovies();
     await updateMyMovies();
 
+//use event listeners to hide and show the forms
+
+    $('#addNav').click(function () {
+        $('#add').show();
+        $('#delete').hide();
+        $('#update').hide();
+    });
+
+    $('#deleteNav').click(function () {
+        $('#delete').show();
+        $('#add').hide();
+        $('#update').hide();
+    });
+
+    $('#updateNav').click(function () {
+        $('#update').show();
+        $('#updateField').show();
+        $('#add').hide();
+        $('#delete').hide();
+    });
+
+    $('#home').click(function () {
+        location.reload();
+    });
+
 
 })();
 
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {stickyBar()};
 
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function stickyBar() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
 
