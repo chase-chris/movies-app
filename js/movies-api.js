@@ -49,6 +49,7 @@ const addMovie = async (movie) => {
 // HAPPY CODING!!!
 
 const deleteMovie = async (movie) => {
+    console.log("deleteMovie function");
     try {
         const url = `/movies/${movie.id}`;
         const options = {
@@ -58,7 +59,7 @@ const deleteMovie = async (movie) => {
             }
         };
         let response = await db.fetch(url, options);
-        console.log("hey this works")
+        // console.log("hey this works")
         return await response.json();
 
     } catch (e) {
