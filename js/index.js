@@ -1,5 +1,5 @@
 (async () => {
-
+    "use strict";
     // This is the entry point for your application. Write all of your code here.
     // Before you can use the database, you need to configure the "db" object
     // with your team name in the "js/movies-api.js" file.
@@ -20,12 +20,13 @@
                                         <h1>${movies[i].title}</h1>
                                         <div class="card_cat">
                                             <p class="year">Year: ${movies[i].year}</p>
-                                            <p class="genre">Genre: ${movies[i].genre}</p>
+                                            <p class="genre">Genre: ${movies[i].genre}</p>                                 
                                             <p class="time">Minutes: ${movies[i].runtime}</p>
                                             <p class="director">Director: ${movies[i].director}</p>
                                             <p class="actors">Actors: ${movies[i].actors}</p>
+                                            <p class="rating">Rating: ${movies[i].rating}</p>
                                         </div>
-                                        <img src="${movies[i].poster ? movies[i].poster : ''}" alt="poster" class="poster">
+                                        
                                         <div class="social-btn">
                                          <!-- WATCH TRAILER-->
                                            <button>
@@ -35,11 +36,9 @@
                                     </div>
                                 </div>
                             <div class="card_right">
-                                <div class="img_container">
-                                    <img src="${movies[i].poster ? movies[i].poster : ''}" alt="movie">
-                               </div>
+                                
                            <div class="play_btn">
-                           <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
+                           
                            </a>
                            </div>
                            </div>
@@ -50,6 +49,54 @@
             }
             $('#movies').html(newhtml)
         }
+
+    //todo write a function that will search movies by title using the input field with the id of search-input when the button with the id of search-input-btn is clicked
+
+    async function searchMyMovies() {
+        $('#search-movie-btn').click(async function () {
+            const movies = await getMovies();
+            let newhtml = ``;
+            for (let i = 0; i < movies.length; i++) {
+                if (movies[i].title === $('#search-movie').val()) {
+                    let cardHtml = `<div class="movie">
+                        <div class="wrapper">
+                             <div class="main_card">
+                                <div class="card_left">
+                                    <div class="card_datails">
+                                        <h1>${movies[i].title}</h1>
+                                        <div class="card_cat">
+                                            <p class="year">Year: ${movies[i].year}</p>
+                                            <p class="genre">Genre: ${movies[i].genre}</p>
+                                            <p class="time">Minutes: ${movies[i].runtime}</p>
+                                            <p class="director">Director: ${movies[i].director}</p>
+                                            <p class="actors">Actors: ${movies[i].actors}</p>
+                                            <p class="rating">Rating: ${movies[i].rating}</p>
+                                        </div>
+                                        
+                                        <div class="social-btn">
+                                         <!-- WATCH TRAILER-->
+                                           <button>
+                                               <a href="${movies[i].trailer}" target="_blank">Watch Trailer</a>
+                                           </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="card_right">
+                                
+                           <div class="play_btn">
+                           
+                           </a>
+                           </div>
+                           </div>
+                        </div>
+                    </div>
+                  </div>`
+                    newhtml += cardHtml;
+                }
+                $('#movies-searched').html(newhtml)
+            }
+        });
+    }
 
     //todo write a function that adds a movie to the database when the add button is clicked
 
@@ -73,8 +120,6 @@
 
     //todo write a function that deletes a movie from the database when the delete button is clicked using the title as the identifier
 
-
-
         async function deleteMyMovies() {
             $('#delete-movie-btn').click(async function () {
                 const movies = await getMovies();
@@ -96,9 +141,7 @@
             });
         }
 
-
-
-
+        
     async function updateMyMovies() {
         $('#update-input-btn').click(async function () {
             const movies = await getMovies();
@@ -127,6 +170,7 @@
     await addMyMovies();
     await deleteMyMovies();
     await updateMyMovies();
+    await searchMyMovies();
 
 //use event listeners to hide and show the forms
 
@@ -165,32 +209,6 @@
         $('#delete').hide();
         $('#update').hide();
     });
-
-
-    //search function
-    $('#search-movie-btn').click(async function () {
-        const movies = await getMovies();
-        console.log("search btn clicked");
-        for (let i = 0; i < movies.length; i++) {
-            console.log(movies[i])
-            if (movies[i].title === $('#search-movie').val()) {
-                let movie = {
-                    title: $('#title1').val(),
-                    rating: $('#rating1').val(),
-                    id: movies[i].id,
-                    year: $('#year1').val(),
-                    director: $('#director1').val(),
-                    runtime: $('#runtime1').val(),
-                    genre: $('#genre1').val(),
-                    actors: $('#actors1').val(),
-                };
-                console.log(movie)
-                await updateMovie(movie);
-                await loadMovies();
-            }
-        }
-    });
-
 
 })();
 

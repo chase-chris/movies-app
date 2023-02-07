@@ -5,90 +5,93 @@
     <title>Movies App</title>
     <link rel="stylesheet" href="css/movies-app.css">
 </head>
-<body>
+    <body>
 
-<!--Navbar Start-->
-<div class="topnav" id="navbar">
-    <a id="homeNav" href="#home">Home</a>
-    <a id="addNav" href="#add">ADD</a>
-    <a id="deleteNav" href="#delete">DELETE</a>
-    <a id="updateNav" href="#update">UPDATE</a>
-    <a id="searchNav" href="#search">SEARCH</a>
-    <div class="overlay"></div>
-</div>
+        <!--Navbar Start-->
+        <div class="topnav" id="navbar">
+            <a id="homeNav" href="#home">Home</a>
+            <a id="addNav" href="#add">ADD</a>
+            <a id="deleteNav" href="#delete">DELETE</a>
+            <a id="updateNav" href="#update">UPDATE</a>
+            <a id="searchNav" href="#search">SEARCH</a>
+            <div class="overlay"></div>
+        </div>
 
-<!--Navbar End-->
-<!--Hidden Classes Update/Delete/Add-->
-<!--Movie Search Form Start-->
-<div id="search" class="hide">
-    <input id="search-movie" type="text" placeholder="Movie Name">
-    <button id="search-movie-btn">Search Movie</button>
-</div>
-<!--Movie Search Form End-->
+        <!--Navbar End-->
+        <!--Hidden Classes Update/Delete/Add-->
+        <!--Movie Search Form Start-->
+        <div id="search" class="hide">
+            <input id="search-movie" type="text" placeholder="Movie Name">
+            <button id="search-movie-btn">Search Movie</button>
+        </div>
+        <!--Movie Search Form End-->
 
-<!--Movie Add Form Start-->
-<div id="add" class="hide">
-    <input id="title" type="text" placeholder="Title">
-    <input id="rating" type="text" placeholder="Rating">
-    <input id="actors" type="text" placeholder="Actors">
-    <input id="genre" type="text" placeholder="Genre">
-    <input id="runtime" type="text" placeholder="Runtime">
-    <input id="year" type="text" placeholder="Year">
-    <input id="director" type="text" placeholder="Director">
-    <input id="trailer" type="text" placeholder="Trailer Link">
-    <button id="add-movie">Add Movie</button>
-</div>
-<!--Movie Add Form End-->
-<!--Movie Delete Form Start-->
-<div id="delete" class="hide">
-    <input id="delete-movie" type="text" placeholder="Movie Name">
-    <button id="delete-movie-btn">Delete Movie</button>
-</div>
-<!--Movie Delete Form end -->
-<!--Movie Update Form Start-->
+        <!--Movie Add Form Start-->
+        <div id="add" class="hide">
+            <input id="title" type="text" placeholder="Title">
+            <input id="rating" type="text" placeholder="Rating">
+            <input id="actors" type="text" placeholder="Actors">
+            <input id="genre" type="text" placeholder="Genre">
+            <input id="runtime" type="text" placeholder="Runtime">
+            <input id="year" type="text" placeholder="Year">
+            <input id="director" type="text" placeholder="Director">
+            <input id="trailer" type="text" placeholder="Trailer Link">
+            <button id="add-movie">Add Movie</button>
+        </div>
+        <!--Movie Add Form End-->
+        <!--Movie Delete Form Start-->
+        <div id="delete" class="hide">
+            <input id="delete-movie" type="text" placeholder="Movie Name">
+            <button id="delete-movie-btn">Delete Movie</button>
+        </div>
+        <!--Movie Delete Form end -->
+        <!--Movie Update Form Start-->
 
-<div id="update" class="hide">
-    <input id="update-input" type="text" placeholder="Movie Name">
-    <button id="update-input-btn">update Movie</button>
-    <div id="updateField" class="hide">
-        <input id="title1" type="text" placeholder="Title">
-        <input id="rating1" type="text" placeholder="Rating">
-        <input id="actors1" type="text" placeholder="Actors">
-        <input id="genre1" type="text" placeholder="Genre">
-        <input id="runtime1" type="text" placeholder="Runtime">
-        <input id="year1" type="text" placeholder="year">
-        <input id="director1" type="text" placeholder="director">
-        <input id="trailer" type="text" placeholder="Trailer Link">
-    </div>
-</div>
-<!--Movie Update Form End -->
-<!--Movie Carousel Start-->
+        <div id="update" class="hide">
+            <input id="update-input" type="text" placeholder="Movie Name">
+            <button id="update-input-btn">update Movie</button>
+            <div id="updateField" class="hide">
+                <input id="title1" type="text" placeholder="Title">
+                <input id="rating1" type="text" placeholder="Rating">
+                <input id="actors1" type="text" placeholder="Actors">
+                <input id="genre1" type="text" placeholder="Genre">
+                <input id="runtime1" type="text" placeholder="Runtime">
+                <input id="year1" type="text" placeholder="year">
+                <input id="director1" type="text" placeholder="director">
+                <input id="trailer" type="text" placeholder="Trailer Link">
+            </div>
+        </div>
+        <!--Movie Update Form End -->
+        <!--movie search start-->
 
-<div id="movies"></div>
+        <!--movie search end-->
+        <!--Movie Carousel Start-->
+        <div id="movies-searched"></div>
+        <div id="movies"></div>
 
-<!--Movie Carousel End-->
+        <!--Movie Carousel End-->
 
-<!-- The core Firebase JS SDK and Databse library -->
-<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+        <!-- The core Firebase JS SDK and Databse library -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 
-    <!-- Jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-
-<!-- A local JS file to store the firebase API Key. WARNING: Do not commit this file -->
-<script src="js/keys.js"></script>
-
-<!-- Utilities and higher level functions to simplify database fetches -->
-<script src="js/firebase-config.js"></script>
-
-<!-- Your local JS file to add functions that interact with the database -->
-<script src="js/movies-api.js"></script>
-
-<!-- Your local JS file to add functions that USE your functions from movies-api.js
-    and INTERACT with the DOM -->
-<script src="js/index.js"></script>
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 
-</body>
+        <!-- A local JS file to store the firebase API Key. WARNING: Do not commit this file -->
+        <script src="js/keys.js"></script>
+
+        <!-- Utilities and higher level functions to simplify database fetches -->
+        <script src="js/firebase-config.js"></script>
+
+        <!-- Your local JS file to add functions that interact with the database -->
+        <script src="js/movies-api.js"></script>
+
+        <!-- Your local JS file to add functions that USE your functions from movies-api.js
+            and INTERACT with the DOM -->
+        <script src="js/index.js"></script>
+
+
+    </body>
 </html>

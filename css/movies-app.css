@@ -288,7 +288,7 @@ button:hover {
     }
     20% {
         transform: scale(1.8);
-        -webkit-transform: scale2);
+        -webkit-transform: scale2),
         opacity: 0;
     }
 }
