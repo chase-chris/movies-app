@@ -36,7 +36,7 @@
                                 </div>
                             <div class="card_right">
                                 <div class="img_container">
-                                    <img src="${movies[i].poster ? movies[i].poster : ''}" alt="movie">
+<!--                                    <img src="${movies[i].poster ? movies[i].poster : ''}" alt="movie">-->
                                </div>
                            <div class="play_btn">
                            <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
@@ -105,7 +105,7 @@
     //todo write a search function that searches my title and returns that
     //
     //
-    //
+    //async function searchMyMovies() {
     // $('.search-movie-btn').click(function() {
     //
     //         for (let i = 0; i < movies.length; i++) {
@@ -225,7 +225,7 @@ var sticky = navbar.offsetTop;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function stickyBar() {
-    if (window.pageYOffset >= sticky) {
+    if (window.scrolly >= sticky) {
         navbar.classList.add("sticky")
     } else {
         navbar.classList.remove("sticky");
