@@ -20,6 +20,7 @@
                                         <h1>${movies[i].title}</h1>
                                         <div class="card_cat">
                                             <p class="year">Year: ${movies[i].year}</p>
+                                            <p class="rating">Rating: ${movies[i].rating}</p>
                                             <p class="genre">Genre: ${movies[i].genre}</p>
                                             <p class="time">Minutes: ${movies[i].runtime}</p>
                                             <p class="director">Director: ${movies[i].director}</p>
@@ -115,6 +116,7 @@
                         runtime: $('#runtime1').val(),
                         genre: $('#genre1').val(),
                         actors: $('#actors1').val(),
+                        trailer: $('#trailer1').val(),
                     };
                     //console.log(movie)
                     await updateMovie(movie);
@@ -168,28 +170,29 @@
 
 
     //search function
-    $('#search-movie-btn').click(async function () {
-        const movies = await getMovies();
-        console.log("search btn clicked");
-        for (let i = 0; i < movies.length; i++) {
-            console.log(movies[i])
-            if (movies[i].title === $('#search-movie').val()) {
-                let movie = {
-                    title: $('#title1').val(),
-                    rating: $('#rating1').val(),
-                    id: movies[i].id,
-                    year: $('#year1').val(),
-                    director: $('#director1').val(),
-                    runtime: $('#runtime1').val(),
-                    genre: $('#genre1').val(),
-                    actors: $('#actors1').val(),
-                };
-                console.log(movie)
-                await updateMovie(movie);
-                await loadMovies();
-            }
-        }
-    });
+    // $('#search-movie-btn').click(async function () {
+    //     const movies = await getMovies();
+    //     console.log("search btn clicked");
+    //     for (let i = 0; i < movies.length; i++) {
+    //         console.log(movies[i])
+    //         if (movies[i].title === $('#search-movie').val()) {
+    //             let movie = {
+    //                 title: $('#title1').val(),
+    //                 rating: $('#rating1').val(),
+    //                 id: movies[i].id,
+    //                 year: $('#year1').val(),
+    //                 director: $('#director1').val(),
+    //                 runtime: $('#runtime1').val(),
+    //                 genre: $('#genre1').val(),
+    //                 actors: $('#actors1').val(),
+    //                 trailer: $('#trailer1').val(),
+    //             };
+    //             console.log(movie)
+    //             await updateMovie(movie);
+    //             await loadMovies();
+    //         }
+    //     }
+    // });
 
 
 })();
